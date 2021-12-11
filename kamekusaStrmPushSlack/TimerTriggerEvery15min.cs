@@ -32,7 +32,8 @@ namespace kamekusaStrmPushSlack
 
             Int32 unixTimestamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             //cosmosdbのタイムゾーンとズレてたのでとりあえず9時間も追加で引く
-            Int32 before15Min = unixTimestamp - 15 * 60 - (60 * 60 * 9);
+            //Int32 before15Min = unixTimestamp - 15 * 60 - (60 * 60 * 9);
+            Int32 before15Min = unixTimestamp - 15 * 60; //勘違い？合ってた。
             slack_text += unixTimestamp.ToString();
             slack_text += "\n";
 

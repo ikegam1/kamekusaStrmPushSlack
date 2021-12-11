@@ -44,7 +44,8 @@ namespace kamekusaStrmPushSlack
             database = await cosmosClient.CreateDatabaseIfNotExistsAsync(databaseId);
             container = await database.CreateContainerIfNotExistsAsync(containerId, "/_partitionKey");
 
-            var sqlQueryText = "SELECT * FROM c WHERE c.label = 'kamekusa' AND c._ts >= " + before15Min.ToString() + " OFFSET 0 LIMIT 1000";
+            var sqlQueryText = "SELECT * FROM c WHERE c.label = 'kamekusa' AND c._ts >= " + before15Min.ToString();
+            sqlQueryText += " ORDER BY c._ts desc OFFSET 0 LIMIT 1000";
 
             log.LogInformation("Running query: {sqlQueryText}\n");
 

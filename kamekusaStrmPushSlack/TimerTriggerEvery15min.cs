@@ -6,10 +6,7 @@ using System.Net;
 using Newtonsoft.Json;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
-using Microsoft.Azure.Documents.Client;
-using Microsoft.Azure.Documents.Linq;
 using System.Threading.Tasks;
-using Microsoft.Azure.Documents;
 using Microsoft.Azure.Cosmos;
 using System.Collections.Generic;
 

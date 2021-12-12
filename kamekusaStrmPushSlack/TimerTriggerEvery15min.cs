@@ -45,7 +45,7 @@ namespace kamekusaStrmPushSlack
             container = await database.CreateContainerIfNotExistsAsync(containerId, "/_partitionKey");
 
             var sqlQueryText = "SELECT * FROM c WHERE c.label = 'kamekusa' AND c._ts >= " + before15Min.ToString();
-            sqlQueryText += " ORDER BY c._ts desc OFFSET 0 LIMIT 1000";
+            sqlQueryText += " ORDER BY c._ts desc OFFSET 0 LIMIT 100000";
 
             log.LogInformation("Running query: {sqlQueryText}\n");
 
